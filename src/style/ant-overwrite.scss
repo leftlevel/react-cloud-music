@@ -1,0 +1,199 @@
+//table
+.ant-table {
+    background-color: var(--body-bgcolor) !important;
+
+    td,
+    th {
+        padding: 4px !important;
+        font-size: $font-size-sm !important;
+        vertical-align: middle;
+    }
+}
+
+.ant-table-thead {
+    tr {
+        th {
+            background-color: var(--body-bgcolor) !important;
+        }
+    }
+}
+
+.ant-table tbody>tr.ant-table-row:hover>td {
+    background-color: var(--playlist-hover-bgcolor) !important;
+}
+
+@mixin ant-td-style($color) {
+
+    th,
+    td,
+    tr {
+        color: var(--font-color) !important;
+        background-color: $color !important;
+        border-bottom: none !important;
+    }
+}
+
+.ant-table {
+    @include ant-td-style(var(--body-bgcolor))
+}
+
+@mixin ant-table-theme($color) {
+    ::v-deep .ant-table {
+        @include ant-td-style($color);
+    }
+}
+
+//input
+$input-height: 24px;
+
+@mixin ant-input-style($color, $bg-color, $placeholder-color) {
+
+    .ant-input {
+        height: $input-height !important;
+        line-height: $input-height !important;
+        background: #{$bg-color} !important;
+        border: none !important;
+        color: #{$color} !important;
+
+        &:hover {
+            border: none !important;
+        }
+
+        &:focus {
+            border: none !important;
+            box-shadow: none;
+        }
+    }
+
+    .ant-input-prefix {
+        line-height: $input-height + 3px !important;
+
+        color: #{$color} !important;
+        transition: none !important;
+    }
+
+    input::-webkit-input-placeholder {
+        color: #{$placeholder-color} !important;
+    }
+}
+
+// 外部覆写input-theme样式
+@mixin ant-input-theme($color, $bg-color, $placeholder-color: $color) {
+    ::v-deep .ant-input-affix-wrapper {
+        padding-top: 0;
+        padding-bottom: 0;
+        border: none;
+        box-shadow: none;
+        outline: none;
+        background: #{$bg-color};
+
+        @include ant-input-style($color, $bg-color, $placeholder-color);
+    }
+
+    ::v-deep .ant-input-search {
+        @include ant-input-style($color, $bg-color, $placeholder-color);
+    }
+}
+
+/* .ant-input-affix-wrapper {
+    @include ant-input-style(var(--input-color),
+        var(--input-bgcolor),
+        var(--font-color-grey-shallow));
+} */
+
+// 登录弹窗内的输入框样式重写
+.login-body {
+    @include ant-input-style(var(--input-color),
+        var(--input-bgcolor),
+        var(--font-color-grey-shallow));
+}
+
+// popover
+@each $direction in 'bottom''top''left''right' {
+    .ant-popover-content .ant-popover-arrow {
+        border-#{$direction}-color: var(--prompt-bg-color) !important;
+    }
+}
+
+.ant-popover-inner {
+    background: var(--prompt-bg-color) !important;
+    border: none !important;
+    text-align: left;
+    @include box-shadow;
+}
+
+.ant-popover-inner-content {
+    color: var(--font-color) !important;
+}
+
+// modal
+.ant-modal-header,
+.ant-modal-content {
+    background: var(--modal-bg-color) !important;
+    border-bottom: none !important;
+}
+
+.ant-modal-title,
+.ant-modal-close {
+    color: var(--font-color) !important;
+}
+
+.ant-modal-footer {
+    border-top: none !important;
+    padding: 18px;
+}
+
+.ant-modal-close-x:hover {
+    color: $theme-color;
+}
+
+// pagination
+.ant-pagination {
+
+    .ant-pagination-item-link {
+        color: var(--font-color) !important;
+
+        span {
+            color: var(--font-color) !important;
+        }
+    }
+
+    .ant-pagination-item {
+        border: none;
+        background: inherit !important;
+
+        a {
+            font-weight: 800;
+            height: 24px !important;
+            line-height: 24px !important;
+            color: var(--font-color) !important;
+        }
+
+        &-active,
+        &:hover {
+            a {
+                color: $theme-color !important;
+            }
+        }
+    }
+}
+
+// button
+.ant-btn-primary {
+    background: $theme-color !important;
+    border-color: $theme-color !important;
+}
+
+.ant-btn-primary:hover {
+    background: $theme-color-hover !important;
+    border-color: $theme-color-hover !important;
+}
+
+// spin
+.ant-spin {
+    color: $theme-color !important;
+
+    .ant-spin-dot-item {
+        background-color: $theme-color !important;
+    }
+}
