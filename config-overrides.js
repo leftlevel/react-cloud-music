@@ -10,7 +10,7 @@ const path = require('path')
 
 module.exports = override(
   addWebpackAlias({
-    component: path.resolve(__dirname, 'src/components'),
+    components: path.resolve(__dirname, 'src/components'),
     views: path.resolve(__dirname, 'src/views'),
     utils: path.resolve(__dirname, 'src/utils'),
     style: path.resolve(__dirname, 'src/style'),
