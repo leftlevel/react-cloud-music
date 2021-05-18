@@ -10,11 +10,16 @@ const SuspenseComponent = Component => props => {
 }
 
 const Test = lazy(() => import('../views/Test'))
+const Layout = lazy(() => import('../views/Layout'))
 
 const routes = [
+  // {
+  //   path: '/test',
+  //   component: SuspenseComponent(Test)
+  // }
   {
-    path: '/test',
-    component: SuspenseComponent(Test)
+    path: '/',
+    component: SuspenseComponent(Layout)
   }
 ]
 
