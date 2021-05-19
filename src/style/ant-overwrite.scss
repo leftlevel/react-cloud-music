@@ -34,7 +34,7 @@
 }
 
 .ant-table {
-    @include ant-td-style(var(--body-bgcolor))
+    @include ant-td-style(var(--body-bgcolor));
 }
 
 @mixin ant-table-theme($color) {
