@@ -1,0 +1,27 @@
+.search-result-wrapper {
+  .result-title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 10px;
+    color: var(--font-color-gray-shallow);
+
+    .song {
+      margin-bottom: 2px;
+    }
+  }
+
+  .result-item {
+    span {
+      display: inline-block;
+      width: 100%;
+      padding: 12px 25px;
+      color: var(--font-color);
+      @include text-ellipsis;
+    }
+
+    &:hover {
+      background: var(--light-bgcolor);
+    }
+  }
+}
