@@ -4,6 +4,8 @@ import { bindActionCreators } from 'redux'
 import * as musicAction from 'store/music/action'
 import Icon from 'components/Icon'
 import History from 'components/History'
+import Search from 'components/Search'
+import Theme from 'components/Theme'
 import './index.scss'
 
 function Header(props) {
@@ -41,10 +43,10 @@ function Header(props) {
       </div>
       <div className='header-right'>
         <div className='header-right__search'>
-
+          <Search />
         </div>
         <div className='header-right__theme'>
-          
+          <Theme />
         </div>
       </div>
     </header>
