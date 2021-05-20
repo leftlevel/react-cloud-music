@@ -68,3 +68,31 @@ export function genPlaylist(playlist) {
     }
   })
 }
+
+/**
+ * @description: 生成用户歌单
+ * @param {*} userPlaylist
+ * @param {*} userId
+ * @return {*}
+ */
+export function genUsermenu(userPlaylist, userId) {
+  const retMenu = []
+  const createPlaylist = genCreatePlaylist(userPlaylist, userId)
+  const collectPlaylist = genCollectPlaylist(userPlaylist, userId)
+
+  if (createPlaylist.length) {
+    retMenu.push({
+      type: 'playlist',
+      title: '创建的歌单',
+      children: genPlaylist(createPlaylist)
+    })
+  }
+  if (collectPlaylist.length) {
+    retMenu.push({
+      type: 'playlist',
+      title: '收藏的歌单',
+      children: genPlaylist(collectPlaylist)
+    })
+  }
+  return retMenu
+}
