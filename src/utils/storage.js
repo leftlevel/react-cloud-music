@@ -5,5 +5,5 @@ export function setStorage(key, val) {
 }
 
 export function getStorage(key) {
-  storage.get(key)
+  return storage.get(key)
 }
