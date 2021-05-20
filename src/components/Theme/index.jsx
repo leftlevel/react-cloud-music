@@ -80,6 +80,7 @@ function Theme() {
   }, [visible])
 
   const hidePop = useCallback(event => {
+    // 点击popver外部隐藏popver
     if (visible && popEl.current && !popEl.current.contains(event.target)) {
       setVisible(false)
     }
@@ -87,8 +88,8 @@ function Theme() {
 
   useEffect(() => {
     const theme = getStorage(THEME_KEY) ? getStorage(THEME_KEY) : themesObj.white
-    console.log(theme);
     changeTheme(theme)
+    // eslint-disable-next-line
   }, [])
 
   useEffect(() => {

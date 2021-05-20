@@ -125,7 +125,7 @@ function SearchInput(props) {
         onPressEnter={handlePressEnter}
         value={searchKeyword}
         ref={inputEl}
-        placeholder='搜索看看'
+        placeholder='搜索音乐、MV'
         onChange={handleChange}
         prefix={<SearchOutlined />}
       />

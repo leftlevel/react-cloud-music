@@ -8,7 +8,7 @@
   height: $header-height;
   background-color: var(--header-bgcolor);
 
-  ::v-deep .iconfont {
+  .iconfont {
     color: var(--header-font-color);
   }
 
