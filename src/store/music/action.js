@@ -14,7 +14,7 @@ export const startSong = rawSong => {
 
     const playHistoryCopy = playHistory.slice()
 
-    const findedIndex = playHistoryCopy.findedIndex(({ id }) => cong.id === id)
+    const findedIndex = playHistoryCopy.findIndex(({ id }) => song.id === id)
 
     if (findedIndex !== -1) {
       // 删除旧的一项，插入到最前面
