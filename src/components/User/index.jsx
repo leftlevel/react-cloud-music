@@ -27,10 +27,94 @@ const User = props => {
     props.userActions.login(inputVal).then(res => {
       console.log(res);
       if (res) {
-        setVisible()
+        setVisible(false)
       }
     })
   }
+  const handleLogout = () => {
+    props.userActions.logout().then(() => {
+      setCfmVisible(false)
+    })
+  }
+  const handleCancel = () => {
+    setVisible(false)
+  }
+  const handleCfmCancel = () => {
+    setCfmVisible(false)
+  }
+  const handleInputChange = e => {
+    setInputVal(e.target.value)
+  }
+
+  // 初始化登录
+  useEffect(() => {
+    const uid = getStorage(UID_KEY)
+
+    if (isDef(uid)) props.userActions.login(uid)
+  }, [props.userActions])
+  
+  return (
+    <Fragment>
+      {
+        props.isLogin ? (
+          <div className='user-wrapper' onClick={handleOpenConfirm}>
+            <Avatar src={avatarUrl} />
+            <p>{nickname}</p>
+          </div>
+        ) : (
+          <div className='user-wrapper' onClick={handleOpenModal}>
+            <Icon type={'yonghu'} size={24} />
+            <p>未登录</p>
+          </div>
+        )
+      }
+      <Modal
+        visible={cfmVisible}
+        title='提示'
+        width={toRem(320)}
+        onCancel={handleCfmCancel}
+        footer={[
+          <Button className='login-btn' key='login' type='primary' onClick={handleLogout}>
+            确认
+          </Button>
+        ]}
+      >
+        <p className='help'>确认要注销吗？</p>
+      </Modal>
+      <Modal
+        visible={visible}
+        title='登录'
+        width={toRem(320)}
+        onCancel={handleCancel}
+        footer={[
+          <Button className='login-btn' key='login' type='primary' onClick={handleLogin}>
+            登录
+          </Button>
+        ]}
+      >
+        <div className='login-body'>
+          <Input
+            className='login-input'
+            placeholder='请输入您的网易云uid'
+            value={inputVal}
+            onChange={handleInputChange}
+          />
+          <div className='login-help'>
+            <p className='help'>
+              1、请
+              <a href='http://music.163.com' target='_blank' rel='noopener noreferrer'>
+                点我(http://music.163.com)
+              </a>
+              打开网易云音乐官网
+            </p>
+            <p className='help'>2、点击页面右上角的“登录”</p>
+            <p className='help'>3、点击您的头像，进入我的主页</p>
+            <p className='help'>4、复制浏览器地址栏 /user/home?id= 后面的数字（网易云 UID）</p>
+          </div>
+        </div>
+      </Modal>
+    </Fragment>
+  )
 }
 
 const mapStateToProps = state => {
@@ -42,4 +126,4 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({ userActions: bindActionCreators(userActions, dispatch) })
 
-export default connect(memo(User))
+export default connect(mapStateToProps, mapDispatchToProps)(memo(User))
