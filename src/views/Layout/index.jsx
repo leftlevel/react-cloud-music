@@ -13,6 +13,7 @@ function Layout(props) {
         <div className='layout-menu'>
           <Menu />
         </div>
+        <div className='layout-content'>{renderRoutes(route.routes)}</div>
       </div>
     </div>
   )
