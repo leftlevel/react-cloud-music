@@ -31,7 +31,7 @@ export const musicReducer = (state = defaultState, action = {}) => {
     case music.SET_PLAY_LIST_SHOW:
       return { ...state, ...{ isPlayListShow: action.flag } }
     case music.SET_PLAY_LIST:
-      return { ...state, ...{ playList: action.congs } }
+      return { ...state, ...{ playList: action.songs } }
     case music.SET_PLAYER_SHOW:
       return { ...state, ...{ isPlayerShow: action.flag } }
     case music.SET_CURRENT_TIME:

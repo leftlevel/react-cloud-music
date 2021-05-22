@@ -40,6 +40,7 @@ export const login = uid => {
 export const logout = () => {
   return async dispatch => {
     dispatch(setUser({}))
+    dispatch(setPlaylist([]))
     dispatch(setLogin(false))
     setStorage(UID_KEY, null)
   }
