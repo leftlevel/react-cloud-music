@@ -1,3 +1,4 @@
 import Banner from './Banner'
+import NewPlaylists from './NewPlaylists'
 
-export { Banner }
+export { Banner, NewPlaylists }
