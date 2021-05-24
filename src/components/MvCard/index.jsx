@@ -28,7 +28,7 @@ function MvCard(props) {
           <PlayIcon size={48} />
         </div>
       </div>
-      <p className='name'>{name}</p>
+      <p className='name' title={name}>{name}</p>
       <p className='singer'>{artistName}</p>
     </div>
   )

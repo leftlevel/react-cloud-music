@@ -25,7 +25,7 @@ function PlaylistCard(props) {
           <PlayIcon size={36} />
         </div>
       </div>
-      <div className='card-name'>{name}</div>
+      <div className='card-name' title={name}>{name}</div>
     </div>
   )
 }
