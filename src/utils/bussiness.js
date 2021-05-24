@@ -1,5 +1,10 @@
 import { playModeMap } from './config'
 
+/**
+ * @description: 创建歌格式
+ * @param {*} song
+ * @return {*}
+ */
 export function createSong(song) {
   const { id, name, img, artists, duration, albumId, albumName, mvId, ...rest} = song
 
@@ -20,6 +25,11 @@ export function createSong(song) {
   }
 }
 
+/**
+ * @description: 生成歌曲播放地址
+ * @param {*} id
+ * @return {*}
+ */
 export function genSongPlayUrl(id) {
   return `https://music.163.com/song/media/outer/url?id=${id}.mp3`
 }
