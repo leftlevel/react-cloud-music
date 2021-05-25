@@ -10,10 +10,14 @@ function History(props) {
     history.goBack()
   }
 
+  const goForward = () => {
+    history.goForward()
+  }
+
   return (
     <div className='history-wrapper'>
       <Icon backdrop={true} type={'back'} click={goBack}/>
-      <Icon backdrop={true} type={'forward'}/>
+      <Icon backdrop={true} type={'forward'} click={goForward} />
     </div>
   )
 }
