@@ -1,0 +1,19 @@
+.playlist-wrapper {
+  padding: 12px;
+  max-width: $center-content-max-width;
+  margin: auto;
+
+  .top-play-list-card {
+    margin-bottom: 16px;
+
+    .playlist-cards {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .pagination-wrap {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

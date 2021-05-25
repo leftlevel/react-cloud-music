@@ -11,6 +11,7 @@ const SuspenseComponent = Component => props => {
 
 const Layout = lazy(() => import('../views/Layout'))
 const Discovery = lazy(() => import('../views/Discovery'))
+const Playlists = lazy(() => import('../views/Playlists'))
 
 // 左侧边栏菜单
 export const menuRoutes = [
@@ -22,6 +23,7 @@ export const menuRoutes = [
   },
   {
     path: '/playlists',
+    component: SuspenseComponent(Playlists),
     title: '推荐歌单',
     icon: 'playlist-menu'
   },
