@@ -37,7 +37,9 @@ function Playlists() {
       offset: getPageOffset(pageIndex, PAGE_SIZE)
     })
     setSongPlaylists(unique(playlists))
-    setSongTotal(total)
+    if (total) {
+      setSongTotal(total)
+    }
   }
 
   // 标签回调
