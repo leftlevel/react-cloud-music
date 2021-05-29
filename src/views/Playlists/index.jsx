@@ -16,6 +16,10 @@ const TABS = [
 
 const PAGE_SIZE = 50
 
+let header = document.getElementsByClassName('header')
+let tabWrapper = document.getElementsByClassName('tab-wrapper')
+let layoutContent = document.getElementsByClassName('layout-content')
+
 function Playlists() {
   const [topPlaylist, setTopPlaylist] = useState({})      // 精品歌单数据
   const [songPlaylists, setSongPlaylists] = useState([])  // 歌单列表数据
@@ -50,6 +54,9 @@ function Playlists() {
   // 分页改变回调
   const handlePaginationChange = useCallback(page => {
     setPageIndex(page)
+    let headerHeight = header[0].clientHeight
+    let tabWrapperTop =  tabWrapper[0].offsetTop - headerHeight
+    layoutContent[0].scrollTop = tabWrapperTop
   }, [])
 
   useEffect(() => {
