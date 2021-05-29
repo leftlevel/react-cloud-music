@@ -49,6 +49,7 @@ function Playlists() {
   // 标签回调
   const handleTabChange = useCallback(index => {
     setCurrentIndex(index)
+    layoutContent[0].scrollTop = 0
   }, [])
 
   // 分页改变回调
