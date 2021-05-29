@@ -1,0 +1,50 @@
+.song-table-wrap {
+  .img-wrap {
+    position: relative;
+    @include img-wrap(60px);
+
+    &:hover {
+      .img-play-icon {
+        opacity: 1;
+        transition: all .3s;
+      }
+    }
+  }
+
+  img {
+    border-radius: 4px;
+  }
+  .img-play-icon {
+    @include abs-center;
+    opacity: 0;
+  }
+
+  .index-wrap {
+    text-align: center;
+    color: var(--font-color-grey-shallow);
+  }
+
+  .song-table-name-cell {
+    @include text-ellipsis;
+    display: flex;
+    align-items: center;
+    flex: 0 0 24px;
+
+    .song-table-name {
+      overflow: hidden;
+      @include text-ellipsis;
+    }
+  }
+
+  .table-row-active {
+    .song-active {
+      color: $theme-color;
+    }
+  }
+
+  .stripe {
+    td {
+      background-color: #fafafa !important;
+    }
+  }
+}
