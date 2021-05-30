@@ -7,7 +7,6 @@ function Banner() {
   const [bannerList, setBannerList] = useState([])
   const getBannerList = async () => {
     const { banners: banner } = await getBanner(0)
-    console.log(banner)
     setBannerList(banner)
   }
 

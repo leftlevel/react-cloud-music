@@ -25,7 +25,6 @@ const User = props => {
       return
     }
     props.userActions.login(inputVal).then(res => {
-      console.log(res);
       if (res) {
         setVisible(false)
       }
