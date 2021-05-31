@@ -9,7 +9,6 @@ function NewPlaylists() {
 
   const getList = async () => {
     const { result } = await getPersonalized({ limit: 10 })
-    console.log(result)
     setList(result)
   }
 
