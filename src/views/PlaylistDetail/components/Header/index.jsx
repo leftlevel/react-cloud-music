@@ -40,9 +40,13 @@ function Header(props) {
           </div>
         </div>
         <div className='desc-wrap'>
-          <p className='desc'>
-            <span>标签：{tagsText(playlist.tags)}</span>
-          </p>
+          {
+            playlist.tags.length ? (
+              <p className='desc'>
+                <span>标签：{tagsText(playlist.tags)}</span>
+              </p>
+            ) : null
+          }
           {
             playlist.description ? (
               <p className='desc'>
