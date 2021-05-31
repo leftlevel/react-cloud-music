@@ -39,8 +39,7 @@ export function getListDetail(params) {
 // 音乐详情
 export function getSongDetail(ids) {
   return http({
-    url: '/song/detail',
+    url: `/song/detail?ids=${ids}`,
     method: 'get',
-    params: ids
   })
 }
