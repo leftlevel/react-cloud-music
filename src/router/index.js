@@ -12,6 +12,9 @@ const SuspenseComponent = Component => props => {
 const Layout = lazy(() => import('../views/Layout'))
 const Discovery = lazy(() => import('../views/Discovery'))
 const Playlists = lazy(() => import('../views/Playlists'))
+const Songs = lazy(() => import('../views/Songs'))
+const Mvs = lazy(() => import('../views/Mvs'))
+const PlaylistDetail = lazy(() => import('../views/PlaylistDetail'))
 
 // 左侧边栏菜单
 export const menuRoutes = [
@@ -30,11 +33,13 @@ export const menuRoutes = [
   {
     path: '/songs',
     title: '最新音乐',
+    component: SuspenseComponent(Songs),
     icon: 'yinyue'
   },
   {
     path: '/mvs',
     title: '最新MV',
+    component: SuspenseComponent(Mvs),
     icon: 'mv'
   }
 ]
@@ -49,6 +54,10 @@ const routes = [
         path: '/',
         exact: true,
         render: () => <Redirect to={'/discovery'} />
+      },
+      {
+        path: "/playlist/:id",
+        component: SuspenseComponent(PlaylistDetail)
       },
       ...menuRoutes
     ]
