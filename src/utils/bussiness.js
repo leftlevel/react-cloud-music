@@ -71,7 +71,7 @@ export function genCollectPlaylist(userPlaylist, userId) {
 export function genPlaylist(playlist) {
   return playlist.map(({ id, name, coverImgUrl, trackCount }) => {
     return {
-      path: `/playlists/${id}`,
+      path: `/playlist/${id}`,
       title: name,
       avatar: coverImgUrl,
       num: trackCount
