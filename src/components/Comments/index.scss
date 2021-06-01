@@ -1,0 +1,25 @@
+.comments-wrap {
+  .block {
+    margin-bottom: 48px;
+
+    .title {
+      font-size: $font-size-lg;
+      font-weight: $font-weight-bold;
+      margin-bottom: 4px;
+
+      .count {
+        font-size: $font-size-lg;
+      }
+    }
+  }
+
+  .pagination-wrap {
+    text-align: center;
+  }
+
+  .empty {
+    text-align: center;
+    margin-top: 100px;
+    color: var(--font-color);
+  }
+}
