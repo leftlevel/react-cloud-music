@@ -20,7 +20,7 @@ function SongCard(props) {
       </div>
       <div className='song-content'>
         <p className='song-name'>{name}</p>
-        <p className='singer'>{artistsText}</p>
+        <p className='singer' title={artistsText}>{artistsText}</p>
       </div>
     </div>
   )
