@@ -79,7 +79,7 @@ function Playlists() {
         <Tabs tabs={TABS} type={'small'} align={'left'} tabChange={handleTabChange} />
         <div className='playlist-cards'>
           {
-            songPlaylists.length && songPlaylists.map(list => {
+            songPlaylists.length ? songPlaylists.map(list => {
               return (
                 <PlaylistCard
                   id={list.id}
@@ -89,7 +89,7 @@ function Playlists() {
                   key={list.id}
                 />
               )
-            })
+            }) : null
           }
         </div>
         {
