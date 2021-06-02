@@ -12,35 +12,31 @@ export function getAllMvs(params) {
 // 获取 mv 数据
 export function getMvDetails(id) {
   return http({
-    url: '/mv/detail',
+    url: `/mv/detail?mvid=${id}`,
     method: 'get',
-    mvid: id
   })
 }
 
 // 获取相似 mv
 export function getSimiMv(id) {
   return http({
-    url: '/simi/mv',
+    url: `/simi/mv?mvid=${id}`,
     method: 'get',
-    mvid: id
   })
 }
 
 // 获取 mv 地址
 export function getMvUrl(id) {
   return http({
-    url: '/mv/url',
+    url: `/mv/url?id=${id}`,
     method: 'get',
-    id
   })
 }
 
 // 获取歌手单曲
 export function getArtists(id) {
   return http({
-    url: '/artists',
+    url: `/artists?id=${id}`,
     method: 'get',
-    id
   })
 }
