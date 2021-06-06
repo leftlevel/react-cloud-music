@@ -143,7 +143,7 @@ function SongTable(props) {
 
   const handleRowClick = song => {
     startSong(song)
-    setPlayList(song)
+    setPlayList(songs)
   }
 
   const isActiveSong = useCallback(id => {
