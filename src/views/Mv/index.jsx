@@ -2,6 +2,7 @@ import React, { memo, useState, useEffect } from 'react'
 import { withRouter } from 'react-router-dom'
 import { formatDate } from 'utils'
 import { getMvDetails, getMvUrl, getSimiMv, getArtists } from 'api/mv'
+import { message } from 'antd'
 import Comments from 'components/Comments'
 import MvCard from 'components/MvCard'
 import VideoPlayer from 'components/VideoPlayer'
@@ -16,17 +17,21 @@ function Mv(props) {
   const [simiMvs, setSimiMvs] = useState([])
 
   const init = async () => {
-    const [{ data: mvDetail }, { data: mvPlayInfo }, { mvs: simiMvs }] = await Promise.all([
-      getMvDetails(id),
-      getMvUrl(id),
-      getSimiMv(id)
-    ])
-
-    const { artist } = await getArtists(mvDetail.artistId)
-    setMvDetail(mvDetail)
-    setMvPlayInfo(mvPlayInfo)
-    setSimiMvs(simiMvs)
-    setArtist(artist)
+    try {
+      const [{ data: mvDetail }, { data: mvPlayInfo }, { mvs: simiMvs }] = await Promise.all([
+        getMvDetails(id),
+        getMvUrl(id),
+        getSimiMv(id)
+      ])
+  
+      const { artist } = await getArtists(mvDetail.artistId)
+      setMvDetail(mvDetail)
+      setMvPlayInfo(mvPlayInfo)
+      setSimiMvs(simiMvs)
+      setArtist(artist)
+    } catch (error) {
+      message.error('找不到此Mv')
+    }
   }
 
   useEffect(() => {
