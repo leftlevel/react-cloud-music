@@ -1,0 +1,14 @@
+.volume-wrap {
+  display: flex;
+  align-items: center;
+  width: 150px;
+
+  .volume-icon {
+    color: var(--font-color);
+    margin-right: 8px;
+  }
+
+  .progress-wrap {
+    flex: 1;
+  }
+}
