@@ -47,7 +47,7 @@ function Comments(props) {
     setTotal(total)
 
     if (update) {
-      update(total)
+      update(total, false)
     }
   }
 
@@ -68,6 +68,11 @@ function Comments(props) {
 
   useEffect(() => {
     getComment()
+    return () => {
+      if (update) {
+        update(total, true)
+      }
+    }
   }, [id, currentPage])
 
   return (

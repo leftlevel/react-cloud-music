@@ -48,10 +48,16 @@ function PlaylistDetail(props) {
     setSongs(songs)
   }
 
-  const handleUpdate = total => {
-    const copy = tabs.slice()
-    copy.splice(1, 1, `评论(共${total}条)`)
-    setTabs(copy)
+  const handleUpdate = (total, isWillUnmount) => {
+    if (!isWillUnmount) {
+      const copy = tabs.slice()
+      copy.splice(1, 1, `评论(共${total}条)`)
+      setTabs(copy)
+    } else {
+      const copy = tabs.slice()
+      copy.splice(1, 1, `评论`)
+      setTabs(copy)
+    }
   }
 
   useEffect(() => {
