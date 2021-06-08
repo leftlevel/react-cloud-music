@@ -14,6 +14,7 @@ const Discovery = lazy(() => import('../views/Discovery'))
 const Playlists = lazy(() => import('../views/Playlists'))
 const Songs = lazy(() => import('../views/Songs'))
 const Mvs = lazy(() => import('../views/Mvs'))
+const Mv = lazy(() => import('../views/Mv'))
 const PlaylistDetail = lazy(() => import('../views/PlaylistDetail'))
 
 // 左侧边栏菜单
@@ -56,8 +57,12 @@ const routes = [
         render: () => <Redirect to={'/discovery'} />
       },
       {
-        path: "/playlist/:id",
+        path: '/playlist/:id',
         component: SuspenseComponent(PlaylistDetail)
+      },
+      {
+        path: '/mv/:id',
+        component: SuspenseComponent(Mv)
       },
       ...menuRoutes
     ]
