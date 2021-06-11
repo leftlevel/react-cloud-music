@@ -14,7 +14,7 @@ export function getLyric(id) {
   return http({
     url: '/lyric',
     method: 'get',
-    params: id
+    params: { id }
   })
 }
 
