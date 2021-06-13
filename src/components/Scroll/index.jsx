@@ -28,7 +28,7 @@ const Scroll = forwardRef((props, ref) => {
       scrollY: true,
       probeType: 3,
       mouseWheel: true,
-      scrollbar: true
+      scrollbar: false
     })
     setBScroll(scroll)
 
