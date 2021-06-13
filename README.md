@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# react-cloud-music
+#### react-cloud-music—— 一个React打造的网易云音乐页面播放器
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+在学完 React 基础后，我打算用它来做一个我期待已久的网易云小项目，顺便学习 hook 的用法和巩固 redux 的用法。
 
-## Available Scripts
+此项目能够从0开始搭建脚手架并逐渐完善 特此感谢 Binaryify 提供的后端[NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi/) 和 ImloserLee 提供的[源码](https://github.com/ImloserLee/react-netease-music)参考，我在源码基础上继续优化 bug 及新增了一部分功能
 
-In the project directory, you can run:
+#### 技术栈
+- React、React-Router、React-Redux、Redux-thunk等
+- UI库 Ant Design
+- 列表滚动 better-scroll
+- Sass（CSS 预处理器）
+#### 界面预览
+![img](https://note.youdao.com/yws/api/personal/file/D3373A71EC884B9A9E86BE6A39638121?method=download&shareKey=2aacf8acddad1140a7cf4d22b768b766)
 
-### `yarn start`
+![img](https://note.youdao.com/yws/api/personal/file/1DCC81BAFAE140338A87FF9092AC0771?method=download&shareKey=83371cc7c8cb8584aa90790555d82ac7)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![img](https://note.youdao.com/yws/api/personal/file/A661D9A1A9B04B23BD8EBCA5B28D6F90?method=download&shareKey=e5cf89cda8d69a8432f30ba3387ea4cd)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![img](https://note.youdao.com/yws/api/personal/file/F69BBC3325A04137904845F6CF51775F?method=download&shareKey=0b990de31c09682e4eaf1bcd633dccde)
 
-### `yarn test`
+#### 目前完成功能
+- [x] 支持主题切换
+- [x] Uid 登录/登出
+- [x] 推荐歌单
+- [x] 发现音乐
+- [x] 最新音乐
+- [x] 最新MV（支持MV播放）
+- [x] 个人的歌单
+- [x] 收藏的歌单
+- [x] 当前/历史播放列表
+- [x] 歌词高亮
+- [x] 相似歌曲
+- [x] 相似歌单
+- [x] 相似MV
+- [x] 热门搜索
+- [x] 历史搜索
+- [x] 精致播放器
+- [x] 歌曲/歌单/MV详情
+- [x] 歌曲/歌单/MV评论
+- [x] 相似歌曲
+- [x] 更多功能还在完善...
+#### Project clone
+```
+git clone -b master https://github.com/leftlevel/react-cloud-music
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Project setup
+```
+yarn install
+```
 
-### `yarn build`
+#### Compiles and hot-reloads for development
+```
+yarn start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Compiles and minifies for production
+```
+yarn build
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
