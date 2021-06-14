@@ -1233,6 +1233,32 @@
   resolved "https://registry.npm.taobao.org/@bcoe/v8-coverage/download/@bcoe/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha1-daLotRy3WKdVPWgEpZMteqznXDk=
 
+"@better-scroll/core@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.nlark.com/@better-scroll/core/download/@better-scroll/core-2.3.1.tgz?cache=0&sync_timestamp=1620475191182&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40better-scroll%2Fcore%2Fdownload%2F%40better-scroll%2Fcore-2.3.1.tgz#4c29a3b7ea462c659dba0a288a060ddb1a4dde14"
+  integrity sha1-TCmjt+pGLGWdugooigYN2xpN3hQ=
+  dependencies:
+    "@better-scroll/shared-utils" "^2.3.1"
+
+"@better-scroll/mouse-wheel@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.nlark.com/@better-scroll/mouse-wheel/download/@better-scroll/mouse-wheel-2.3.1.tgz?cache=0&sync_timestamp=1620475192342&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40better-scroll%2Fmouse-wheel%2Fdownload%2F%40better-scroll%2Fmouse-wheel-2.3.1.tgz#486f72cac74d8bdf46524d4aac68bb6f273016dd"
+  integrity sha1-SG9yysdNi99GUk1KrGi7bycwFt0=
+  dependencies:
+    "@better-scroll/core" "^2.3.1"
+
+"@better-scroll/scroll-bar@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.nlark.com/@better-scroll/scroll-bar/download/@better-scroll/scroll-bar-2.3.1.tgz?cache=0&sync_timestamp=1620475190587&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40better-scroll%2Fscroll-bar%2Fdownload%2F%40better-scroll%2Fscroll-bar-2.3.1.tgz#f66efc342f771ade52016a721a2a6154833b51cf"
+  integrity sha1-9m78NC93Gt5SAWpyGiphVIM7Uc8=
+  dependencies:
+    "@better-scroll/core" "^2.3.1"
+
+"@better-scroll/shared-utils@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.nlark.com/@better-scroll/shared-utils/download/@better-scroll/shared-utils-2.3.1.tgz?cache=0&sync_timestamp=1620475189791&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40better-scroll%2Fshared-utils%2Fdownload%2F%40better-scroll%2Fshared-utils-2.3.1.tgz#e863a6ed32aa79d37870dafe26b052827017a88f"
+  integrity sha1-6GOm7TKqedN4cNr+JrBSgnAXqI8=
+
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
   resolved "https://registry.npm.taobao.org/@cnakazawa/watch/download/@cnakazawa/watch-1.0.4.tgz#f864ae85004d0fcab6f50be9141c4da368d1656a"

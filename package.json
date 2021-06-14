@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@better-scroll/core": "^2.3.1",
+    "@better-scroll/mouse-wheel": "^2.3.1",
+    "@better-scroll/scroll-bar": "^2.3.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -29,7 +32,7 @@
     "xgplayer": "2.9.4"
   },
   "scripts": {
-    "start": "set PORT=8080 && react-app-rewired start",
+    "start": "set PORT=8081 && react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"
