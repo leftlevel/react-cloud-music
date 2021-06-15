@@ -107,6 +107,11 @@ export function formatTime(interval) {
   return `${minute}:${second}`;
 }
 
+/**
+ * @description: 滚动条滑动
+ * @param {*} dom
+ * @return {*}
+ */
 export function scrollInto(dom) {
   dom.scrollIntoView({ behavior: "smooth" });
 }
