@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useMemo, memo, useCallback, useRef } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { CSSTransition } from 'react-transition-group'
 import * as musicAction from 'store/music/action'
 import Tabs from 'components/Tabs'
 import Icon from 'components/Icon'
@@ -19,6 +18,7 @@ function PlayList(props) {
   } = props
 
   const [tabIndex, setTabIndex] = useState(0)
+  const [isHideAnimationShow, setIsHideAnimationShow] = useState(false)
   const playListRef = useRef(null)
 
   const handleClear = () => {
@@ -32,9 +32,13 @@ function PlayList(props) {
 
   // 点击弹窗外部进行隐藏
   const hidePlayList = useCallback(e => {
-    // console.log(playListRef.current, e.target)
     if (isPlayListShow && playListRef.current && !playListRef.current.contains(e.target)) {
-      setPlayListShow(false)
+      setIsHideAnimationShow(true)
+      // 延迟卸载组件，使离开动画生效
+      setTimeout(() => {
+        setPlayListShow(false)
+        setIsHideAnimationShow(false)
+      }, 500)
     }
   }, [isPlayListShow])
 
@@ -50,7 +54,7 @@ function PlayList(props) {
   }, [hidePlayList])
 
   return isPlayListShow ? (
-    <div className='playlist-wrap' ref={playListRef}>
+    <div className={['playlist-wrap', isPlayListShow && 'left-animation', isHideAnimationShow && 'hide-animation'].join(' ')} ref={playListRef}>
       <Tabs tabs={TABS} align={'center'} tabChange={handleTabChange} />
       <div className='play-header'>
         <p className='total'>{`总共${dataSource.length}首`}</p>

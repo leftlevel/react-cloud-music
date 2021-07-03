@@ -48,3 +48,31 @@
     flex: 1;
   }
 }
+
+.left-animation {
+    animation: popToLeft 1 .5s;
+}
+
+.hide-animation {
+    animation: popHide 1 .5s;
+}
+
+@keyframes popToLeft {
+    0% {
+        opacity: 0;
+    }
+    
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes popHide {
+    0% {
+        opacity: 1;
+    }
+    
+    100% {
+        opacity: 0;
+    }
+}

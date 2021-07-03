@@ -83,7 +83,13 @@ function Miniplayer(props) {
   }, [playMode])
 
   const togglePlayListShow = () => {
-    setPlayListShow(!isPlayListShow)
+    if (!isPlayListShow) {
+        setPlayListShow(!isPlayListShow)
+    } else {
+        setTimeout(() => {
+            setPlayListShow(!isPlayListShow)
+        }, 500)
+    }
   }
 
   const togglePlayerShow = () => {
