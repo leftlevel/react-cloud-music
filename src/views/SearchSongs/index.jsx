@@ -66,16 +66,24 @@ function SearchSongs(props) {
   return (
     <div className='search-song'>
       <SongTable showHeader={true} songs={songs} stripe={false} />
-      <div className='pagination-wrap'>
-        <Pagination
-          size={'small'}
-          total={count}
-          pageSize={PAGE_SIZE}
-          current={pageIndex}
-          onChange={handlePaginationChange}
-          showSizeChanger={false}
-        />
-      </div>
+      {
+        count ? (
+          <div className='pagination-wrap'>
+            <Pagination
+              size={'small'}
+              total={count}
+              pageSize={PAGE_SIZE}
+              current={pageIndex}
+              onChange={handlePaginationChange}
+              showSizeChanger={false}
+            />
+          </div>
+        ) : (
+          <div className='msg-wrap'>
+            搜索结果不存在
+          </div>
+        )
+      }
     </div>
   )
 }
