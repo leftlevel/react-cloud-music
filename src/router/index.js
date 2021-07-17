@@ -10,12 +10,16 @@ const SuspenseComponent = Component => props => {
 }
 
 const Layout = lazy(() => import('../views/Layout'))
+const Search = lazy(() => import('../views/Search'))
 const Discovery = lazy(() => import('../views/Discovery'))
 const Playlists = lazy(() => import('../views/Playlists'))
 const Songs = lazy(() => import('../views/Songs'))
 const Mvs = lazy(() => import('../views/Mvs'))
 const Mv = lazy(() => import('../views/Mv'))
 const PlaylistDetail = lazy(() => import('../views/PlaylistDetail'))
+const SearchSongs = lazy(() => import('../views/SearchSongs'))
+const SearchPlaylists = lazy(() => import('../views/SearchPlaylists'))
+const SearchMvs = lazy(() => import('../views/SearchMvs'))
 
 // 左侧边栏菜单
 export const menuRoutes = [
@@ -63,6 +67,24 @@ const routes = [
       {
         path: '/mv/:id',
         component: SuspenseComponent(Mv)
+      },
+      {
+        path: '/search/:keywords',
+        component: SuspenseComponent(Search),
+        routes: [
+          {
+            path: '/search/:keywords/songs',
+            component: SuspenseComponent(SearchSongs)
+          },
+          {
+            path: '/search/:keywords/playlists',
+            component: SuspenseComponent(SearchPlaylists)
+          },
+          {
+            path: '/search/:keywords/mvs',
+            component: SuspenseComponent(SearchMvs)
+          }
+        ]
       },
       ...menuRoutes
     ]
