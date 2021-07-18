@@ -26,12 +26,20 @@
 
       img {
         &.blur {
-          filter: blur(2px);
+          filter: blur(1px);
         }
       }
 
       .player-control {
         @include abs-center;
+        opacity: 0;
+      }
+
+      &:hover {
+        .player-control {
+          opacity: 1;
+          transition: all .3s;
+        }
       }
     }
 

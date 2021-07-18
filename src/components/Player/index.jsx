@@ -65,12 +65,10 @@ function Player(props) {
 
   const updateLyric = async () => {
     const ret = await getLyric(currentSong.id)
-    console.log(ret.lrc)
     setNolyric(!isDef(ret.lrc) || !ret.lrc.lyric)
 
     if (!nolyric) {
       const { lyric, tlyric } = lyricParser(ret)
-      console.log(lyric, tlyric)
       setLyric(lyric)
       setTlyric(tlyric)
     }
@@ -108,7 +106,6 @@ function Player(props) {
     let ret = []
     // 去除空内容
     const lyricFiltered = lyric.filter(({ content }) => Boolean(content))
-    console.log('lyricFiltered', lyricFiltered)
     // content统一转换为数组形式
     if (lyricFiltered.length) {
       lyricFiltered.forEach(l => {
@@ -132,7 +129,6 @@ function Player(props) {
         }
       })
     }
-    console.log('ret', ret)
     return ret
   }, [tlyric, lyric])
 
