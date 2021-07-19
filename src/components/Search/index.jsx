@@ -11,7 +11,7 @@ import Suggest from './Suggest'
 import './index.scss'
 
 function SearchInput(props) {
-  const { history } = props
+  const { history, location: { pathname } } = props
   const panelEl = useRef()
   const inputEl = useRef()
   const [searchKeyword, setSearchKeyword] = useState('')
@@ -71,6 +71,7 @@ function SearchInput(props) {
 
   // 按下回车回调
   const handlePressEnter = e => {
+    if (!e.target.value) return
     const res = searchHistorys.concat([{ first: e.target.value }])
     setSearchHistory(res)
     setStorage(SEARCH_HISTORY_KEY, res)
@@ -83,7 +84,8 @@ function SearchInput(props) {
 
   const goSearch = async value => {
     if (!value) return
-    history.push(`/search/${value}/songs`)
+    let type = pathname.split('/')[3]
+    history.push(`/search/${value}/${type}`)
   }
 
   const clickEvent = e => {
