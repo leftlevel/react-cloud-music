@@ -34,13 +34,13 @@ const VideoPlayer = forwardRef((props, ref) => {
 
   useEffect(() => {
     initPlayer()
+    return () => {
+      if (playerCor) {
+        playerCor.destroy()
+        setPlayerCor(null)
+      }
+    }
   }, [url])
-
-  useEffect(() => {
-    // if (playerCor) {
-    //   console.log(playerCor)
-    // }
-  }, [playerCor])
 
   return (
     <div ref={player}></div>
