@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import LazyLoad from 'react-lazyload'
 import PlayIcon from 'components/PlayIcon'
 import Icon from 'components/Icon'
-import { formatNumber } from 'utils'
 import './index.scss'
 
 function MvCard(props) {
@@ -22,7 +21,7 @@ function MvCard(props) {
         </LazyLoad>
         <div className='mvplay-count-wrap'>
           <Icon type='play' />
-          {formatNumber(playCount)}
+          {playCount}
         </div>
         <div className='mvplay-icon-wrap'>
           <PlayIcon size={48} />
